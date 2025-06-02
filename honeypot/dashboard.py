@@ -9,7 +9,6 @@ try:
     _FASTAPI_AVAILABLE = True
 except ImportError:
     _FASTAPI_AVAILABLE = False
-
 from . import config
 from . import db
 
