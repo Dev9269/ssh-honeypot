@@ -3,7 +3,6 @@ server:
   port: 2222
 auth:
   delay: 2
-
 ip_filter:
   whitelist: []
   blacklist: []
