@@ -6,7 +6,6 @@ auth:
 ip_filter:
   whitelist: []
   blacklist: []
-
 rate_limit:
   max_connections: 10
   window: 60
