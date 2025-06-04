@@ -10,6 +10,7 @@ from . import config
 
 
 class AlertManager:
+
     def __init__(self):
         self._queue = []
         self._lock = threading.Lock()
