@@ -11,6 +11,7 @@ _LOCK = threading.Lock()
 
 
 class HoneypotLogger:
+
     def __init__(self):
         os.makedirs(config.LOG_DIR, exist_ok=True)
 
