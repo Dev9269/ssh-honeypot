@@ -4,7 +4,6 @@ import paramiko
 from . import config
 from . import logger
 from . import db
-
 HONEYPOT_LOGGER = logger.get_logger()
 
 
