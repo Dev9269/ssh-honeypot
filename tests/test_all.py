@@ -12,6 +12,7 @@ os.environ['HONEYPOT_CONFIG'] = 'test'
 
 
 @pytest.fixture(autouse=True)
+
 def setup_test_env():
     with tempfile.TemporaryDirectory() as tmpdir:
         old_cwd = os.getcwd()
