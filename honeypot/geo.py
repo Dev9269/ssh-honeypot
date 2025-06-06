@@ -8,6 +8,7 @@ from . import config
 
 
 class GeoIP:
+
     def __init__(self):
         self._reader = None
         self._available = False
