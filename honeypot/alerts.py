@@ -5,7 +5,6 @@ import threading
 from email.mime.text import MIMEText
 from datetime import datetime
 from typing import Dict, Any, Optional
-
 from . import config
 
 
