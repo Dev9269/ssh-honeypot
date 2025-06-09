@@ -6,7 +6,6 @@ from datetime import datetime
 from logging.handlers import RotatingFileHandler
 from typing import Optional
 from . import config
-
 _LOCK = threading.Lock()
 
 
