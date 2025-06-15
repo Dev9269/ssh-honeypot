@@ -10,7 +10,6 @@ rate_limit:
   max_connections: 10
   window: 60
   ban_duration: 300
-
 shell:
   enabled: true
   hostname: ubuntu-server
