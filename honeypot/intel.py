@@ -77,7 +77,7 @@ class ThreatIntel:
         if score >= 5:
             return 'high'
         if score >= 3:
-            return 'medium'
+            return 'low'
         if score >= 1:
             return 'low'
         return 'info'
