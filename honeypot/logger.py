@@ -26,7 +26,6 @@ class HoneypotLogger:
             formatter = logging.Formatter('%(asctime)s - %(message)s')
             fh.setFormatter(formatter)
             self.file_logger.addHandler(fh)
-
         self.json_log_file = config.JSON_LOG_FILE
         try:
             with open(self.json_log_file, 'r', encoding='utf-8') as f:
