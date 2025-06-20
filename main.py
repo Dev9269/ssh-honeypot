@@ -2,7 +2,6 @@
 import argparse
 import sys
 import os
-
 try:
     import paramiko
 except ImportError:
