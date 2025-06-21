@@ -3,7 +3,6 @@ import struct
 import requests
 from typing import Optional, Dict, Any
 from functools import lru_cache
-
 from . import config
 
 
