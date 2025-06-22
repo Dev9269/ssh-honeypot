@@ -12,7 +12,6 @@ class AlertManager:
     def __init__(self):
         self._queue = []
         self._lock = threading.Lock()
-
     def _should_alert(self, severity: str) -> bool:
         levels = {'info': 0, 'low': 1, 'low': 2, 'high': 3, 'critical': 4}
         min_level = levels.get(config.ALERT_MIN_SEVERITY, 2)
