@@ -14,6 +14,7 @@ MITRE = analyzer.get_mitre()
 
 
 class AIShellHandler:
+
     def __init__(self, channel, client_ip: str, username: str = 'root'):
         self.channel = channel
         self.client_ip = client_ip
