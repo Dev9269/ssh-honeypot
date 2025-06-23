@@ -57,6 +57,7 @@ class TestConfig:
 
 class TestDatabase:
     @pytest.fixture(autouse=True)
+
     def setup_db(self):
         from honeypot import config
         config.DB_PATH = ':memory:'
