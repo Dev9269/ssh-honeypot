@@ -191,6 +191,7 @@ class HoneypotServer(paramiko.ServerInterface):
 
 
 class FakeShellHandler:
+
     def __init__(self, channel, client_ip, username='root'):
         self.channel = channel
         self.client_ip = client_ip
