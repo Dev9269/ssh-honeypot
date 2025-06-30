@@ -119,6 +119,7 @@ class AIShellHandler:
 
 
 class AuthAcceptHandler:
+
     def __init__(self, client_ip: str, username: str, password: str):
         self.client_ip = client_ip
         self.username = username
