@@ -180,6 +180,7 @@ class OllamaEngine:
         return shell_mod.handle_command(cmd, '0.0.0.0', 'root', cwd=cwd)
 
     @staticmethod
+
     def _timeout_response() -> str:
         return (
             'bash: connection to upstream agent timed out\r\n'
