@@ -67,6 +67,7 @@ class SessionState:
 
 
 class OllamaEngine:
+
     def __init__(self):
         self._session_states: Dict[str, SessionState] = {}
         self._lock = threading.Lock()
