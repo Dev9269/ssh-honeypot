@@ -122,6 +122,7 @@ class TestDatabase:
 
 
 class TestRateLimiter:
+
     def test_basic_rate_limit(self):
         from honeypot import config
         config.RATE_LIMIT_MAX_CONNECTIONS = 3
