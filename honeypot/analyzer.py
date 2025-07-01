@@ -83,7 +83,6 @@ class MitreAnalyzer:
             return []
         techniques = []
         techniques.append(MITRE_TECHNIQUES['command_execution'])
-
         cmd_lower = command.lower().strip()
         if any(w in cmd_lower for w in ['wget', 'curl', 'fetch', 'scp', 'rsync']):
             techniques.append(MITRE_TECHNIQUES['file_transfer'])
