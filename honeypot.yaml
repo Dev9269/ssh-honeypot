@@ -18,7 +18,6 @@ shell:
 sftp:
   enabled: true
   root: ./sftp_root
-
 geo:
   enabled: true
   db_path: ./data/GeoLite2-City.mmdb
