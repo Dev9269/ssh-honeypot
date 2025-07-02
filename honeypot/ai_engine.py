@@ -188,6 +188,7 @@ class OllamaEngine:
         )
 
     @staticmethod
+
     def _error_response() -> str:
         return (
             'bash: internal error processing command\r\n'
