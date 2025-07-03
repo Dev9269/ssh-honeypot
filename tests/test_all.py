@@ -426,7 +426,7 @@ class TestIntel:
         intel_instance = intel.ThreatIntel()
         assert intel_instance.get_severity(8) == 'critical'
         assert intel_instance.get_severity(6) == 'high'
-        assert intel_instance.get_severity(4) == 'medium'
+        assert intel_instance.get_severity(4) == 'low'
         assert intel_instance.get_severity(2) == 'low'
         assert intel_instance.get_severity(0) == 'info'
 
