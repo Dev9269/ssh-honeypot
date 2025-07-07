@@ -21,7 +21,6 @@ sftp:
 geo:
   enabled: true
   db_path: ./data/GeoLite2-City.mmdb
-
 threat_intel:
   enabled: false
   abuseipdb_key: ""
