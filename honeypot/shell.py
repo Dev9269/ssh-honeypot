@@ -8,7 +8,6 @@ from . import config
 from . import logger
 from . import db
 from . import analyzer
-
 HONEYPOT_LOGGER = logger.get_logger()
 MITRE = analyzer.get_mitre()
 
