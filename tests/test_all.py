@@ -436,7 +436,7 @@ class TestAlerts:
     def test_should_alert_min_severity(self):
         from honeypot import config
         config.ALERT_ENABLED = True
-        config.ALERT_MIN_SEVERITY = 'medium'
+        config.ALERT_MIN_SEVERITY = 'low'
         config.ALERT_WEBHOOK_URL = ''
         from honeypot.alerts import AlertManager
         alerts = AlertManager()
