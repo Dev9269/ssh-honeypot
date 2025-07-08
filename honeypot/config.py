@@ -4,7 +4,6 @@ from typing import List, Optional
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 HOST = '0.0.0.0'
 PORT = 2222
-
 LOG_DIR = os.path.join(ROOT_DIR, 'logs')
 LOG_FILE = os.path.join(LOG_DIR, 'attacks.log')
 JSON_LOG_FILE = os.path.join(LOG_DIR, 'attacks.json')
