@@ -176,6 +176,7 @@ class TestRateLimiter:
 
 
 class TestAnalyzer:
+
     def test_mitre_techniques_password(self):
         from honeypot import analyzer
         mitre = analyzer.MitreAnalyzer()
