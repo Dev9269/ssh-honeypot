@@ -7,7 +7,6 @@ try:
 except ImportError:
     print("ERROR: paramiko is not installed.")
     sys.exit(1)
-
 try:
     import colorama
     colorama.init(autoreset=True)
