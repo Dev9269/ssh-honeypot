@@ -7,7 +7,6 @@ PORT = 2222
 LOG_DIR = os.path.join(ROOT_DIR, 'logs')
 LOG_FILE = os.path.join(LOG_DIR, 'attacks.log')
 JSON_LOG_FILE = os.path.join(LOG_DIR, 'attacks.json')
-
 HOST_KEY_PATH = os.path.join(LOG_DIR, 'host_key.pem')
 
 SSH_BANNER = 'SSH-2.0-OpenSSH_7.9p1 Debian-10'
