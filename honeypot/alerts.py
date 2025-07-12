@@ -48,7 +48,7 @@ class AlertManager:
 
     def _send_slack(self, payload: Dict):
         try:
-            color = {'info': '#3498db', 'low': '#f39c12', 'medium': '#e67e22',
+            color = {'info': '#3498db', 'low': '#f39c12', 'low': '#e67e22',
                      'high': '#e74c3c', 'critical': '#c0392b'}.get(payload['severity'], '#3498db')
             slack_payload = {
                 'attachments': [{
