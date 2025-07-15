@@ -59,7 +59,6 @@ FAKE_FILESYSTEM = {
         },
     },
 }
-
 CURRENT_DIR = '/root'
 
 
