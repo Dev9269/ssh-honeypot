@@ -9,7 +9,6 @@ LOG_FILE = os.path.join(LOG_DIR, 'attacks.log')
 JSON_LOG_FILE = os.path.join(LOG_DIR, 'attacks.json')
 HOST_KEY_PATH = os.path.join(LOG_DIR, 'host_key.pem')
 SSH_BANNER = 'SSH-2.0-OpenSSH_7.9p1 Debian-10'
-
 AUTH_DELAY = 2
 BACKLOG = 5
 BUFFER_SIZE = 1024
