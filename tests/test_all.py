@@ -4,7 +4,6 @@ import os
 import tempfile
 import json
 import time
-
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 # Set test config before importing modules
