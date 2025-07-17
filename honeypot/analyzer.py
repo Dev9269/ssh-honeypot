@@ -98,7 +98,6 @@ class MitreAnalyzer:
             techniques.append(MITRE_TECHNIQUES['defense_evasion'])
         if any(w in cmd_lower for w in ['tar ', 'zip ', 'gzip', 'base64']):
             techniques.append(MITRE_TECHNIQUES['collection'])
-
         return techniques
 
     def format_techniques(self, techniques: List[Dict]) -> str:
