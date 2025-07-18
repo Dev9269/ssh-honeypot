@@ -74,7 +74,7 @@ class AlertManager:
 
     def _send_discord(self, payload: Dict):
         try:
-            color_map = {'info': 3447003, 'low': 15105570, 'medium': 15105570,
+            color_map = {'info': 3447003, 'low': 15105570, 'low': 15105570,
                          'high': 15158332, 'critical': 10038562}
             discord_payload = {
                 'embeds': [{
