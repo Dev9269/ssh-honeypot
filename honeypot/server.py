@@ -6,7 +6,6 @@ import ipaddress
 import random
 import select
 import paramiko
-
 from . import config
 from . import logger
 from . import db
