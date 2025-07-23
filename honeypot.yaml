@@ -25,7 +25,6 @@ threat_intel:
   enabled: false
   abuseipdb_key: ""
   otx_key: ""
-
 alerts:
   enabled: false
   webhook_url: ""
