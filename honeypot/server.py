@@ -17,7 +17,6 @@ from . import analyzer
 from . import shell as shell_mod
 from . import ai_shell
 from . import ai_engine as ai_engine_mod
-
 try:
     from colorama import Fore, Style, init as colorama_init
     colorama_init(autoreset=True)
