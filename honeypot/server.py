@@ -28,7 +28,6 @@ try:
 except ImportError:
     _COLORAMA_AVAILABLE = False
     _COLOR_GREEN = _COLOR_YELLOW = _COLOR_RED = _COLOR_CYAN = None
-
 HONEYPOT_LOGGER = logger.get_logger()
 GEO = geo.get_geo()
 INTEL = intel.get_intel()
