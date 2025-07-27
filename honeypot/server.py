@@ -66,7 +66,6 @@ def _is_ip_allowed(ip: str) -> bool:
 
 def _enrich_ip(ip: str) -> dict:
     info = {'country': '', 'city': '', 'asn': '', 'isp': '', 'threat_score': 0, 'severity': 'info'}
-
     geo_info = GEO.lookup(ip)
     if not geo_info.get('country') and geo_info.get('country') == '':
         geo_info = GEO.lookup_online(ip)
