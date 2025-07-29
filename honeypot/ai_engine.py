@@ -29,7 +29,6 @@ class SessionState:
         self.history.append(cmd)
         if len(self.history) > config.AI_MAX_HISTORY:
             self.history = self.history[-config.AI_MAX_HISTORY:]
-
     def get_context(self) -> str:
         if not self.history:
             return ''
