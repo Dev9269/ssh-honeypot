@@ -21,7 +21,6 @@ class AlertManager:
             return
         if not self._should_alert(severity):
             return
-
         payload = {
             'title': title,
             'message': message,
