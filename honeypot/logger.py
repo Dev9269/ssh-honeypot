@@ -39,7 +39,6 @@ class HoneypotLogger:
             timestamp = datetime.now().isoformat()
         username = username or ''
         password = password or ''
-
         log_entry = {
             'event': 'auth_attempt',
             'timestamp': timestamp,
