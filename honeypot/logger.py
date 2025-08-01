@@ -49,7 +49,6 @@ class HoneypotLogger:
         }
         if mitre:
             log_entry['mitre'] = mitre
-
         msg = f"IP: {ip} | Username: {username} | Password: {password} | Method: {method}"
         if mitre:
             msg += f" | MITRE: {mitre}"
