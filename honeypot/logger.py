@@ -53,7 +53,6 @@ class HoneypotLogger:
         if mitre:
             msg += f" | MITRE: {mitre}"
         self.file_logger.info(msg)
-
         with _LOCK:
             try:
                 with open(self.json_log_file, 'r+', encoding='utf-8') as f:
