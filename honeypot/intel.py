@@ -40,7 +40,6 @@ class ThreatIntel:
         except Exception:
             pass
         return {}
-
     def get_threat_score(self, ip: str) -> int:
         score = 0
         ab = self.check_abuseipdb(ip)
