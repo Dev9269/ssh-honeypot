@@ -49,7 +49,6 @@ class ThreatIntel:
             score += 2
         elif ab > 25:
             score += 1
-
         try:
             resp = requests.get(f'https://www.virustotal.com/api/v3/ip_addresses/{ip}',
                               headers={'x-apikey': config.INTEL_ABUSEIPDB_KEY},
