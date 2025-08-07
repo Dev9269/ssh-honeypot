@@ -22,7 +22,6 @@ class GeoIP:
                 return
         except Exception:
             pass
-
     @lru_cache(maxsize=1000)
 
     def lookup(self, ip: str) -> Dict[str, str]:
