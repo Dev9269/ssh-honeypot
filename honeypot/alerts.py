@@ -28,7 +28,6 @@ class AlertManager:
             'timestamp': datetime.now().isoformat(),
             'data': data or {},
         }
-
         if config.ALERT_WEBHOOK_URL:
             self._send_webhook(payload)
         if config.ALERT_SLACK_WEBHOOK:
