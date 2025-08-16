@@ -70,7 +70,6 @@ def _enrich_ip(ip: str) -> dict:
     if not geo_info.get('country') and geo_info.get('country') == '':
         geo_info = GEO.lookup_online(ip)
     info.update(geo_info)
-
     if config.INTEL_ENABLED:
         threat_score = INTEL.get_threat_score(ip)
         info['threat_score'] = threat_score
