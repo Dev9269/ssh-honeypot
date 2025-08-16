@@ -32,7 +32,6 @@ Examples:
   python main.py --no-shell                   # Disable fake shell
         """
     )
-
     parser.add_argument('--host', default=config.HOST, help=f'Host interface (default: {config.HOST})')
     parser.add_argument('--port', type=int, default=config.PORT, help=f'Port (default: {config.PORT})')
     parser.add_argument('--config', default=None, help='Path to YAML config file')
