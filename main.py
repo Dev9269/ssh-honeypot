@@ -13,7 +13,6 @@ try:
 except ImportError:
     pass
 sys.path.insert(0, os.path.dirname(__file__))
-
 from honeypot.server import start_server
 from honeypot import config
 from honeypot import db
