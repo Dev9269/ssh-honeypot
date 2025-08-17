@@ -41,7 +41,6 @@ class AlertManager:
             requests.post(config.ALERT_WEBHOOK_URL, json=payload, timeout=5)
         except Exception:
             pass
-
     def _send_slack(self, payload: Dict):
         try:
             color = {'info': '#3498db', 'low': '#f39c12', 'low': '#e67e22',
