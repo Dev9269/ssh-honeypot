@@ -3,7 +3,6 @@ import os
 import threading
 from datetime import datetime
 from typing import Optional, List, Dict, Any
-
 from . import config
 
 _local = threading.local()
