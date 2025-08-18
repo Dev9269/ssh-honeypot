@@ -37,7 +37,6 @@ alerts:
   email_to: ""
   email_from: "honeypot@localhost"
   min_severity: medium
-
 database:
   enabled: true
   path: ./logs/honeypot.db
