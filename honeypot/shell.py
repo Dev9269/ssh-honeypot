@@ -102,7 +102,6 @@ def _get_fake_listing(path: str) -> str:
             return f'ls: cannot access {path}: No such file or directory\r\n'
     if current.get('type') != 'dir':
         return f'{path}\r\n'
-
     children = current.get('children', {})
     if not children:
         return ''
