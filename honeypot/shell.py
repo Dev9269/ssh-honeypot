@@ -105,7 +105,6 @@ def _get_fake_listing(path: str) -> str:
     children = current.get('children', {})
     if not children:
         return ''
-
     result = []
     for name, info in children.items():
         if info['type'] == 'dir':
