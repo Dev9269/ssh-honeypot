@@ -124,7 +124,6 @@ def _get_fake_cat(path: str) -> str:
             current = children[part]
         else:
             return f'cat: {path}: No such file or directory\r\n'
-
     if current.get('type') == 'file':
         return current.get('content', '')
     return f'cat: {path}: Is a directory\r\n'
