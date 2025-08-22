@@ -85,7 +85,6 @@ class OllamaEngine:
             pass
         self._available = False
         return False
-
     def get_or_create_session(self, session_id: str) -> SessionState:
         with self._lock:
             if session_id not in self._session_states:
