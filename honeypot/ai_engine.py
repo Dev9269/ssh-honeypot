@@ -66,7 +66,6 @@ class OllamaEngine:
         self._lock = threading.Lock()
         self._available = None
         self._model_loaded = None
-
     def _check_available(self) -> bool:
         if self._available is not None:
             return self._available
