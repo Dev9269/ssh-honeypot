@@ -20,6 +20,7 @@ class AIShellHandler:
         self.session_id = f"{client_ip}:{int(time.time())}"
         self.running = True
         self.engine = ai_engine.get_engine()
+
     def start(self):
         session = self.engine.get_or_create_session(self.session_id)
         session.username = self.username
