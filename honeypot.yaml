@@ -40,7 +40,6 @@ alerts:
 database:
   enabled: true
   path: ./logs/honeypot.db
-
 dashboard:
   enabled: false
   host: 127.0.0.1
