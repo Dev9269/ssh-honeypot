@@ -68,7 +68,6 @@ class GeoIP:
 
 
 import os
-
 _geo_instance: Optional[GeoIP] = None
 
 
