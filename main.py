@@ -44,7 +44,6 @@ Examples:
     parser.add_argument('--blacklist', default=None, help='Comma separated IPs/CIDRs to block')
     parser.add_argument('--whitelist', default=None, help='Comma separated IPs/CIDRs to allow')
     parser.add_argument('--version', action='version', version='SSH Honeypot v2.0.0')
-
     args = parser.parse_args()
 
     if args.config:
