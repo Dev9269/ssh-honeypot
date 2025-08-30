@@ -74,7 +74,6 @@ def _enrich_ip(ip: str) -> dict:
         threat_score = INTEL.get_threat_score(ip)
         info['threat_score'] = threat_score
         info['severity'] = INTEL.get_severity(threat_score)
-
     return info
 
 
