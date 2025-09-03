@@ -30,7 +30,6 @@ class HoneypotSFTPServer(paramiko.SFTPServerInterface):
             return entries
         except Exception:
             return paramiko.SFTP_FAILURE
-
     def stat(self, path):
         real = self._realpath(path)
         if not os.path.exists(real):
