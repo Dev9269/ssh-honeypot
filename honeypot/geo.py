@@ -25,6 +25,7 @@ class GeoIP:
         except Exception:
             pass
     @lru_cache(maxsize=1000)
+
     def lookup(self, ip: str) -> Dict[str, str]:
         result = {'country': '', 'city': '', 'asn': '', 'isp': '', 'lat': 0.0, 'lon': 0.0}
         if not self._available:
