@@ -46,7 +46,6 @@ dashboard:
   port: 8080
   user: admin
   password: admin
-
 metrics:
   enabled: false
   port: 9090
