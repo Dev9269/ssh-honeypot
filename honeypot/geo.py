@@ -12,6 +12,7 @@ class GeoIP:
         self._reader = None
         self._available = False
         self._init_db()
+
     def _init_db(self):
         if not config.GEO_ENABLED:
             return
