@@ -131,7 +131,6 @@ def _get_fake_cat(path: str) -> str:
 
 def handle_command(cmd: str, ip: str, username: str, cwd: str = '/root') -> str:
     cmd_norm = _normalize_cmd(cmd)
-
     techniques = MITRE.analyze_command(cmd_norm)
     mitre_str = MITRE.format_techniques(techniques)
 
