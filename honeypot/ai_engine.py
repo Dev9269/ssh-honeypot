@@ -90,7 +90,6 @@ class OllamaEngine:
             if session_id not in self._session_states:
                 self._session_states[session_id] = SessionState(session_id)
             return self._session_states[session_id]
-
     def cleanup_session(self, session_id: str):
         with self._lock:
             self._session_states.pop(session_id, None)
