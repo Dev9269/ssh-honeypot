@@ -68,7 +68,6 @@ class HoneypotLogger:
                              timestamp: str = None, mitre: str = ''):
         if timestamp is None:
             timestamp = datetime.now().isoformat()
-
         entry = {
             'event': 'session_activity',
             'timestamp': timestamp,
