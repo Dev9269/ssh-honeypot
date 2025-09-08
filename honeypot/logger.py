@@ -77,7 +77,6 @@ class HoneypotLogger:
         }
         if mitre:
             entry['mitre'] = mitre
-
         self.file_logger.info(f"Activity | IP: {ip} | {activity}")
         with _LOCK:
             try:
