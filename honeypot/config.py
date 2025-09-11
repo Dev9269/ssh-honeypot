@@ -24,7 +24,6 @@ SHELL_PROMPT = '$ '
 SHELL_BANNER = 'Linux ubuntu-server 5.15.0-91-generic #101-Ubuntu SMP Tue Nov 14 13:30:08 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux\r\n'
 SFTP_ENABLED = True
 SFTP_ROOT = os.path.join(ROOT_DIR, 'sftp_root')
-
 GEO_ENABLED = True
 GEO_DB_PATH = os.path.join(ROOT_DIR, 'data', 'GeoLite2-City.mmdb')
 
