@@ -29,6 +29,7 @@ class RateLimiter:
             timestamps.append(now)
             self._connections[ip] = timestamps
         return True
+
     def get_remaining(self, ip: str) -> int:
         now = time.time()
         with self._lock:
