@@ -26,7 +26,6 @@ SFTP_ENABLED = True
 SFTP_ROOT = os.path.join(ROOT_DIR, 'sftp_root')
 GEO_ENABLED = True
 GEO_DB_PATH = os.path.join(ROOT_DIR, 'data', 'GeoLite2-City.mmdb')
-
 INTEL_ENABLED = False
 INTEL_ABUSEIPDB_KEY = ''
 INTEL_OTX_KEY = ''
