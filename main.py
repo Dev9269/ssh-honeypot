@@ -47,7 +47,6 @@ Examples:
     args = parser.parse_args()
     if args.config:
         config.load_yaml_config(args.config)
-
     config.HOST = args.host
     config.PORT = args.port
 
