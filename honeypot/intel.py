@@ -10,7 +10,6 @@ class ThreatIntel:
     def __init__(self):
         self._cache = {}
     @lru_cache(maxsize=500)
-
     def check_abuseipdb(self, ip: str) -> int:
         if not config.INTEL_ENABLED or not config.INTEL_ABUSEIPDB_KEY:
             return 0
