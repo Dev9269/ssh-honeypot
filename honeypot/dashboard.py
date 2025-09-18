@@ -123,6 +123,7 @@ _HTML_TEMPLATE = """<!DOCTYPE html>
 
 
 class DashboardServer:
+
     def __init__(self):
         self._thread: Optional[threading.Thread] = None
         self._app = None
