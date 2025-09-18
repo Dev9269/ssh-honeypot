@@ -64,7 +64,6 @@ class ThreatIntel:
                     score += 1
         except Exception:
             pass
-
         return min(score, 10)
 
     def get_severity(self, score: int) -> str:
