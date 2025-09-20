@@ -86,6 +86,7 @@ class HoneypotServer(paramiko.ServerInterface):
         self.username = ''
         self.auth_method = ''
         self._channel = None
+
     def check_channel_request(self, kind, chanid):
         if kind == 'session':
             return 0
