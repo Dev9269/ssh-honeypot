@@ -55,7 +55,6 @@ log_rotation:
   backup_count: 5
 mitre:
   enabled: true
-
 ai:
   enabled: false
   mode: ollama
