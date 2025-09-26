@@ -91,7 +91,6 @@ class AlertManager:
             requests.post(config.ALERT_DISCORD_WEBHOOK, json=discord_payload, timeout=5)
         except Exception:
             pass
-
     def _send_email(self, payload: Dict):
         try:
             body = f"""
