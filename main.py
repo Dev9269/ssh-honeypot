@@ -49,7 +49,6 @@ Examples:
         config.load_yaml_config(args.config)
     config.HOST = args.host
     config.PORT = args.port
-
     if args.dashboard:
         config.DASHBOARD_ENABLED = True
     if args.ai:
