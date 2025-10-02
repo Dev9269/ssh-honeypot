@@ -227,6 +227,7 @@ class TestAnalyzer:
 
 
 class TestShell:
+
     def test_whoami(self):
         from honeypot import shell
         resp = shell.handle_command('whoami', '10.0.0.1', 'root')
