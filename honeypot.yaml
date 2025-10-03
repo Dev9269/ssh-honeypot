@@ -66,7 +66,6 @@ ai:
   accept_any_auth: true
   fallback_to_static: true
   system_prompt: "You are a real, vulnerable Linux terminal..."
-
 fingerprint_banners:
   enabled: true
   banners:
