@@ -93,7 +93,6 @@ class HoneypotServer(paramiko.ServerInterface):
         time.sleep(config.AUTH_DELAY)
         self.username = username
         self.auth_method = 'password'
-
         mitre_techniques = MITRE.analyze_auth_attempt(username, 'password')
         mitre_str = MITRE.format_techniques(mitre_techniques)
 
