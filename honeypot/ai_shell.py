@@ -22,7 +22,6 @@ class AIShellHandler:
     def start(self):
         session = self.engine.get_or_create_session(self.session_id)
         session.username = self.username
-
         self.channel.send(config.SHELL_BANNER)
         self._interact()
 
