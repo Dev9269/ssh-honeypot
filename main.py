@@ -65,7 +65,6 @@ Examples:
         config.BLACKLIST = [x.strip() for x in args.blacklist.split(',') if x.strip()]
     if args.whitelist:
         config.WHITELIST = [x.strip() for x in args.whitelist.split(',') if x.strip()]
-
     if config.DB_ENABLED:
         db.init_db()
 
