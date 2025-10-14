@@ -43,7 +43,6 @@ class HoneypotSFTPServer(paramiko.SFTPServerInterface):
             return paramiko.SFTPServerFile(self, real, 'r' if flags & os.O_RDONLY else 'w')
         except Exception:
             return paramiko.SFTP_FAILURE
-
     def remove(self, path):
         real = self._realpath(path)
         try:
