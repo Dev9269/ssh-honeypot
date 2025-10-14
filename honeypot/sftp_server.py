@@ -8,7 +8,6 @@ HONEYPOT_LOGGER = logger.get_logger()
 
 
 class HoneypotSFTPServer(paramiko.SFTPServerInterface):
-
     def __init__(self, server, *args, **kwargs):
         self.server = server
         self.root = config.SFTP_ROOT
