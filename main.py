@@ -67,7 +67,6 @@ Examples:
         config.WHITELIST = [x.strip() for x in args.whitelist.split(',') if x.strip()]
     if config.DB_ENABLED:
         db.init_db()
-
     if config.DASHBOARD_ENABLED:
         dashboard = get_dashboard()
         dashboard.start()
