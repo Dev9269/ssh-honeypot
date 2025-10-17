@@ -41,7 +41,6 @@ ALERT_EMAIL_PASS = ''
 ALERT_EMAIL_TO = ''
 ALERT_EMAIL_FROM = 'honeypot@localhost'
 ALERT_MIN_SEVERITY = 'low'
-
 DB_ENABLED = True
 DB_PATH = os.path.join(LOG_DIR, 'honeypot.db')
 
