@@ -70,7 +70,6 @@ Examples:
     if config.DASHBOARD_ENABLED:
         dashboard = get_dashboard()
         dashboard.start()
-
     if config.AI_ENABLED:
         print(f"[*] AI Mode: enabled (model={config.AI_MODEL}, endpoint={config.AI_OLLAMA_ENDPOINT})")
         if config.AI_ACCEPT_ANY_AUTH:
