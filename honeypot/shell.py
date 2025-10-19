@@ -133,7 +133,6 @@ def handle_command(cmd: str, ip: str, username: str, cwd: str = '/root') -> str:
     cmd_norm = _normalize_cmd(cmd)
     techniques = MITRE.analyze_command(cmd_norm)
     mitre_str = MITRE.format_techniques(techniques)
-
     db.insert_command(ip, username, cmd_norm, mitre_techniques=mitre_str)
     HONEYPOT_LOGGER.log_session_activity(
         ip, f"command: {cmd_norm}", username=username
