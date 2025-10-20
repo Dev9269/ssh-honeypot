@@ -30,7 +30,6 @@ class AIShellHandler:
                 r, _, _ = select.select([self.channel], [], [], 0.5)
                 if not r:
                     continue
-
                 data = self.channel.recv(1024)
                 if not data:
                     break
