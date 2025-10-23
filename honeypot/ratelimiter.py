@@ -36,6 +36,7 @@ class RateLimiter:
             timestamps = [t for t in self._connections.get(ip, [])
                          if now - t < config.RATE_LIMIT_WINDOW]
             return max(0, config.RATE_LIMIT_MAX_CONNECTIONS - len(timestamps))
+
     def reset(self, ip: str):
         with self._lock:
             self._connections.pop(ip, None)
