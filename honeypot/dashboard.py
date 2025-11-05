@@ -128,7 +128,6 @@ class DashboardServer:
         self._app = None
     def _create_app(self):
         app = FastAPI(title="SSH Honeypot Dashboard")
-
         @app.get("/api/stats")
         async def get_stats(request: Request):
             auth = request.headers.get("Authorization", "")
