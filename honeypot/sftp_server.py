@@ -18,6 +18,7 @@ class HoneypotSFTPServer(paramiko.SFTPServerInterface):
     def _realpath(self, path):
         path = os.path.normpath(path).lstrip('/')
         return os.path.join(self.root, path)
+
     def list_folder(self, path):
         real = self._realpath(path)
         if not os.path.exists(real):
