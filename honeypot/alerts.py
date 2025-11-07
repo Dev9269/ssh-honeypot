@@ -39,6 +39,7 @@ class AlertManager:
             self._send_discord(payload)
         if config.ALERT_EMAIL_SMTP:
             self._send_email(payload)
+
     def _send_webhook(self, payload: Dict):
         try:
             requests.post(config.ALERT_WEBHOOK_URL, json=payload, timeout=5)
