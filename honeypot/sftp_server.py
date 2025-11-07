@@ -42,6 +42,7 @@ class HoneypotSFTPServer(paramiko.SFTPServerInterface):
 
     def lstat(self, path):
         return self.stat(path)
+
     def open(self, path, flags, attr):
         real = self._realpath(path)
         try:
