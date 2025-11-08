@@ -76,7 +76,6 @@ Examples:
             print(f"[*] AI Trap Mode: accepting any username/password")
     else:
         print("[*] AI Mode: disabled (use --ai to enable)")
-
     try:
         start_server(host=config.HOST, port=config.PORT)
     except Exception as e:
