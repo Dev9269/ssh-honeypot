@@ -139,7 +139,6 @@ def handle_command(cmd: str, ip: str, username: str, cwd: str = '/root') -> str:
     )
     if cmd_norm == 'pwd':
         return cwd + '\r\n'
-
     if cmd_norm in COMMAND_RESPONSES:
         return COMMAND_RESPONSES[cmd_norm]
 
