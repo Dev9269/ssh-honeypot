@@ -36,6 +36,7 @@ class SessionState:
         if not self.history:
             return ''
         return ' | '.join(self.history[-config.AI_MAX_HISTORY:])
+
     def update_from_command(self, cmd: str):
         stripped = cmd.strip()
         if stripped.startswith('cd '):
