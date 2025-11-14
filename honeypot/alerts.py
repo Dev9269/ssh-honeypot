@@ -71,6 +71,7 @@ class AlertManager:
             requests.post(config.ALERT_SLACK_WEBHOOK, json=slack_payload, timeout=5)
         except Exception:
             pass
+
     def _send_discord(self, payload: Dict):
         try:
             color_map = {'info': 3447003, 'low': 15105570, 'low': 15105570,
