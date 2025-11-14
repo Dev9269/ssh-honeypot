@@ -54,6 +54,7 @@ class GeoIP:
         except Exception:
             pass
         return result
+
     def lookup_online(self, ip: str) -> Dict[str, str]:
         result = {'country': '', 'city': '', 'asn': '', 'isp': ''}
         try:
