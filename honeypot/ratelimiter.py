@@ -6,6 +6,7 @@ from . import config
 
 
 class RateLimiter:
+
     def __init__(self):
         self._connections: dict = defaultdict(list)
         self._banned: dict = {}
