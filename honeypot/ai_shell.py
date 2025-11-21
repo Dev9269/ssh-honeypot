@@ -33,7 +33,6 @@ class AIShellHandler:
                 data = self.channel.recv(1024)
                 if not data:
                     break
-
                 try:
                     raw = data.decode('utf-8', errors='ignore')
                 except Exception:
