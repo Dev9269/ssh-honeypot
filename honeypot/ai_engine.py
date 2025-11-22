@@ -56,6 +56,7 @@ class SessionState:
             parts = stripped[7:].split('=', 1)
             if len(parts) == 2:
                 self.env[parts[0].strip()] = parts[1].strip()
+
     def to_prompt_context(self) -> str:
         result = f"Current directory: {self.cwd}\n"
         result += f"Current user: {self.username}@{self.hostname}\n"
