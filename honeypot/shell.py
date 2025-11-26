@@ -141,7 +141,6 @@ def handle_command(cmd: str, ip: str, username: str, cwd: str = '/root') -> str:
         return cwd + '\r\n'
     if cmd_norm in COMMAND_RESPONSES:
         return COMMAND_RESPONSES[cmd_norm]
-
     if cmd_norm.startswith('ls '):
         arg = cmd_norm[3:].strip() or '.'
         return _get_fake_listing(arg)
