@@ -37,7 +37,6 @@ class AIShellHandler:
                     raw = data.decode('utf-8', errors='ignore')
                 except Exception:
                     raw = str(data)
-
                 raw = raw.replace('\r\n', '\n').replace('\r', '\n')
                 for line in raw.split('\n'):
                     line = line.strip()
