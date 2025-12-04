@@ -144,7 +144,6 @@ def handle_command(cmd: str, ip: str, username: str, cwd: str = '/root') -> str:
     if cmd_norm.startswith('ls '):
         arg = cmd_norm[3:].strip() or '.'
         return _get_fake_listing(arg)
-
     if cmd_norm == 'ls':
         return _get_fake_listing('.')
 
