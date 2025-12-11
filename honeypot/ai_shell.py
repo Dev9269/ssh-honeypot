@@ -45,7 +45,6 @@ class AIShellHandler:
                             return
                         self._send_prompt()
                         continue
-
                     cmd_lower = line.strip().lower()
                     if cmd_lower in ('exit', 'quit', 'logout'):
                         self.channel.send('logout\r\n')
