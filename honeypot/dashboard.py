@@ -134,7 +134,6 @@ class DashboardServer:
             if not self._check_auth(auth):
                 raise HTTPException(status_code=401, headers={"WWW-Authenticate": 'Basic realm="Honeypot Dashboard"'})
             return db.get_stats()
-
         @app.get("/")
         async def dashboard(request: Request):
             return HTMLResponse(_HTML_TEMPLATE)
