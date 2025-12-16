@@ -7,7 +7,6 @@ from . import config
 
 
 class ThreatIntel:
-
     def __init__(self):
         self._cache = {}
     @lru_cache(maxsize=500)
