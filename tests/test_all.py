@@ -309,6 +309,7 @@ class TestShell:
 
 class TestLogger:
     @pytest.fixture(autouse=True)
+
     def setup_logger(self):
         from honeypot import logger as logger_mod
         logger_mod.reset_logger()
