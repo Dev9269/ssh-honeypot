@@ -373,6 +373,7 @@ class TestLogger:
 
 
 class TestIPFilter:
+
     def test_ip_in_cidr(self):
         from honeypot.server import _ip_in_cidrs
         assert _ip_in_cidrs('10.0.0.5', ['10.0.0.0/8']) == True
