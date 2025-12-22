@@ -55,7 +55,6 @@ class AIShellHandler:
                         except Exception:
                             pass
                         return
-
                     if cmd_lower == 'clear' or cmd_lower == 'reset':
                         self.channel.send('\033[2J\033[H')
                         self._send_prompt()
