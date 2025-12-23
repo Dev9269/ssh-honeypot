@@ -59,7 +59,6 @@ class AIShellHandler:
                         self.channel.send('\033[2J\033[H')
                         self._send_prompt()
                         continue
-
                     mitre_techniques = MITRE.analyze_command(line)
                     mitre_str = MITRE.format_techniques(mitre_techniques)
 
