@@ -61,7 +61,6 @@ class AIShellHandler:
                         continue
                     mitre_techniques = MITRE.analyze_command(line)
                     mitre_str = MITRE.format_techniques(mitre_techniques)
-
                     db.insert_command(
                         self.client_ip, self.username, line,
                         mitre_techniques=mitre_str
