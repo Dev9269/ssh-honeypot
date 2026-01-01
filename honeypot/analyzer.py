@@ -67,6 +67,7 @@ MITRE_TECHNIQUES = {
 
 
 class MitreAnalyzer:
+
     def __init__(self):
         self.enabled = config.MITRE_ENABLED
     def analyze_auth_attempt(self, username: str, method: str) -> List[Dict]:
