@@ -407,6 +407,7 @@ class TestIPFilter:
 
 
 class TestGeo:
+
     def test_geo_lookup_online(self):
         from honeypot import geo
         geo_instance = geo.GeoIP()
