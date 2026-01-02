@@ -65,7 +65,6 @@ class AIShellHandler:
                         self.client_ip, self.username, line,
                         mitre_techniques=mitre_str
                     )
-
                     HONEYPOT_LOGGER.log_session_activity(
                         self.client_ip,
                         f"AI command: {line[:200]}",
