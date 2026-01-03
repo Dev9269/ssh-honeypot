@@ -25,7 +25,6 @@ class SessionState:
         }
         self.history: List[str] = []
         self.created_at = datetime.now().isoformat()
-
     def add_command(self, cmd: str):
         self.history.append(cmd)
         if len(self.history) > config.AI_MAX_HISTORY:
