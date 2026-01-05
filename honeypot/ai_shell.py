@@ -70,7 +70,6 @@ class AIShellHandler:
                         f"AI command: {line[:200]}",
                         username=self.username
                     )
-
                     response = self.engine.query(line, self.session_id)
 
                     if response and not self.channel.closed:
