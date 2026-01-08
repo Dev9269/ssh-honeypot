@@ -424,6 +424,7 @@ class TestGeo:
 
 
 class TestIntel:
+
     def test_severity_mapping(self):
         from honeypot import intel
         intel_instance = intel.ThreatIntel()
