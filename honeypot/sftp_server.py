@@ -35,7 +35,6 @@ class HoneypotSFTPServer(paramiko.SFTPServerInterface):
         if not os.path.exists(real):
             return paramiko.SFTP_NO_SUCH_FILE
         return paramiko.SFTPAttributes.from_stat(os.stat(real), os.path.basename(real))
-
     def lstat(self, path):
         return self.stat(path)
 
