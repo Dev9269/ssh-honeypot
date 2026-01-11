@@ -95,7 +95,6 @@ class HoneypotServer(paramiko.ServerInterface):
         self.auth_method = 'password'
         mitre_techniques = MITRE.analyze_auth_attempt(username, 'password')
         mitre_str = MITRE.format_techniques(mitre_techniques)
-
         HONEYPOT_LOGGER.log_attempt(
             ip=self.client_ip,
             username=username,
