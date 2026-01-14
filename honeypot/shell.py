@@ -151,7 +151,6 @@ def handle_command(cmd: str, ip: str, username: str, cwd: str = '/root') -> str:
         return _get_fake_cat(arg)
     if cmd_norm.startswith('cd '):
         return ''
-
     if cmd_norm in ('exit', 'quit', 'logout'):
         return 'logout\r\n'
 
