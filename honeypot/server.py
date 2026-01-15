@@ -78,6 +78,7 @@ def _enrich_ip(ip: str) -> dict:
 
 
 class HoneypotServer(paramiko.ServerInterface):
+
     def __init__(self, client_ip, client_port=0):
         self.client_ip = client_ip
         self.client_port = client_port
