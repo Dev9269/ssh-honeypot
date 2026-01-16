@@ -436,6 +436,7 @@ class TestIntel:
 
 
 class TestAlerts:
+
     def test_should_alert_min_severity(self):
         from honeypot import config
         config.ALERT_ENABLED = True
