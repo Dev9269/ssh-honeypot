@@ -71,7 +71,6 @@ class AIShellHandler:
                         username=self.username
                     )
                     response = self.engine.query(line, self.session_id)
-
                     if response and not self.channel.closed:
                         try:
                             self.channel.send(response)
