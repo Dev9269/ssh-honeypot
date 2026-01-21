@@ -456,6 +456,7 @@ class TestAlerts:
 
 
 class TestStress:
+
     def test_many_rate_limiter_ops(self):
         from honeypot import config
         config.RATE_LIMIT_MAX_CONNECTIONS = 100
