@@ -67,7 +67,6 @@ MITRE_TECHNIQUES = {
 
 
 class MitreAnalyzer:
-
     def __init__(self):
         self.enabled = config.MITRE_ENABLED
 
