@@ -520,6 +520,7 @@ class TestStress:
         from honeypot import ratelimiter
         limiter = ratelimiter.RateLimiter()
         results = []
+
         def worker():
             for _ in range(100):
                 results.append(limiter.is_allowed('10.0.0.1'))
