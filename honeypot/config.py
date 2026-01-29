@@ -73,7 +73,6 @@ AI_SYSTEM_PROMPT = (
     '(e.g., "bash: command not found"). '
     'Keep responses short, blunt, and authentic to a bash shell.'
 )
-
 FINGERPRINT_BANNERS = [
     'SSH-2.0-OpenSSH_7.9p1 Debian-10',
     'SSH-2.0-OpenSSH_8.4p1 Ubuntu-6ubuntu2',
