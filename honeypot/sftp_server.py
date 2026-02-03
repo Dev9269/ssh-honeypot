@@ -50,7 +50,6 @@ class HoneypotSFTPServer(paramiko.SFTPServerInterface):
             return paramiko.SFTP_OK
         except Exception:
             return paramiko.SFTP_FAILURE
-
     def rename(self, oldpath, newpath):
         old = self._realpath(oldpath)
         new = self._realpath(newpath)
