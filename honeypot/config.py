@@ -88,7 +88,6 @@ def load_yaml_config(config_path: Optional[str] = None) -> bool:
         config_path = os.path.join(ROOT_DIR, 'honeypot.yaml')
     if not os.path.exists(config_path):
         return False
-
     with open(config_path, 'r') as f:
         cfg = yaml.safe_load(f)
 
