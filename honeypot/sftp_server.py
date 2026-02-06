@@ -58,7 +58,6 @@ class HoneypotSFTPServer(paramiko.SFTPServerInterface):
             return paramiko.SFTP_OK
         except Exception:
             return paramiko.SFTP_FAILURE
-
     def mkdir(self, path, attr):
         real = self._realpath(path)
         try:
