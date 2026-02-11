@@ -102,7 +102,6 @@ class HoneypotServer(paramiko.ServerInterface):
             method='password',
             mitre=mitre_str,
         )
-
         db.insert_auth_attempt(
             self.client_ip, username, password, 'password',
             mitre_techniques=mitre_str
