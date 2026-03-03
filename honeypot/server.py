@@ -91,6 +91,7 @@ class HoneypotServer(paramiko.ServerInterface):
         if kind == 'session':
             return 0
         return 1
+
     def check_auth_password(self, username, password):
         time.sleep(config.AUTH_DELAY)
         self.username = username
