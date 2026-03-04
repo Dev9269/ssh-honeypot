@@ -90,7 +90,6 @@ def load_yaml_config(config_path: Optional[str] = None) -> bool:
         return False
     with open(config_path, 'r') as f:
         cfg = yaml.safe_load(f)
-
     if not cfg:
         return False
 
