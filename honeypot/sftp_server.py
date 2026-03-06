@@ -74,7 +74,6 @@ class HoneypotSFTPServer(paramiko.SFTPServerInterface):
             return paramiko.SFTP_FAILURE
     def chattr(self, path, attr):
         return paramiko.SFTP_OK
-
     def readlink(self, path):
         return paramiko.SFTP_OP_UNSUPPORTED
 
