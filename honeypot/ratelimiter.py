@@ -11,6 +11,7 @@ class RateLimiter:
         self._connections: dict = defaultdict(list)
         self._banned: dict = {}
         self._lock = threading.Lock()
+
     def is_allowed(self, ip: str) -> bool:
         now = time.time()
         with self._lock:
