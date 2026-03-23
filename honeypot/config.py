@@ -96,7 +96,6 @@ def load_yaml_config(config_path: Optional[str] = None) -> bool:
     server = cfg.get('server', {})
     g['HOST'] = server.get('host', HOST)
     g['PORT'] = server.get('port', PORT)
-
     auth = cfg.get('auth', {})
     g['AUTH_DELAY'] = auth.get('delay', AUTH_DELAY)
 
