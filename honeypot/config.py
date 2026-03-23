@@ -92,7 +92,6 @@ def load_yaml_config(config_path: Optional[str] = None) -> bool:
         cfg = yaml.safe_load(f)
     if not cfg:
         return False
-
     g = globals()
     server = cfg.get('server', {})
     g['HOST'] = server.get('host', HOST)
