@@ -98,7 +98,6 @@ def load_yaml_config(config_path: Optional[str] = None) -> bool:
     g['PORT'] = server.get('port', PORT)
     auth = cfg.get('auth', {})
     g['AUTH_DELAY'] = auth.get('delay', AUTH_DELAY)
-
     ip_filter = cfg.get('ip_filter', {})
     g['WHITELIST'] = ip_filter.get('whitelist', WHITELIST)
     g['BLACKLIST'] = ip_filter.get('blacklist', BLACKLIST)
