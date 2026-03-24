@@ -80,6 +80,7 @@ class MitreAnalyzer:
         elif method == 'publickey':
             techniques.append(MITRE_TECHNIQUES['ssh_key_auth'])
         return techniques
+
     def analyze_command(self, command: str) -> List[Dict]:
         if not self.enabled:
             return []
