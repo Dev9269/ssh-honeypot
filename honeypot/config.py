@@ -101,7 +101,6 @@ def load_yaml_config(config_path: Optional[str] = None) -> bool:
     ip_filter = cfg.get('ip_filter', {})
     g['WHITELIST'] = ip_filter.get('whitelist', WHITELIST)
     g['BLACKLIST'] = ip_filter.get('blacklist', BLACKLIST)
-
     rate = cfg.get('rate_limit', {})
     g['RATE_LIMIT_MAX_CONNECTIONS'] = rate.get('max_connections', RATE_LIMIT_MAX_CONNECTIONS)
     g['RATE_LIMIT_WINDOW'] = rate.get('window', RATE_LIMIT_WINDOW)
