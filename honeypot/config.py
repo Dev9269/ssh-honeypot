@@ -105,7 +105,6 @@ def load_yaml_config(config_path: Optional[str] = None) -> bool:
     g['RATE_LIMIT_MAX_CONNECTIONS'] = rate.get('max_connections', RATE_LIMIT_MAX_CONNECTIONS)
     g['RATE_LIMIT_WINDOW'] = rate.get('window', RATE_LIMIT_WINDOW)
     g['RATE_LIMIT_BAN_DURATION'] = rate.get('ban_duration', RATE_LIMIT_BAN_DURATION)
-
     shell = cfg.get('shell', {})
     g['SHELL_ENABLED'] = shell.get('enabled', SHELL_ENABLED)
     g['SHELL_HOSTNAME'] = shell.get('hostname', SHELL_HOSTNAME)
