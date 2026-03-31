@@ -16,7 +16,6 @@ class AlertManager:
         levels = {'info': 0, 'low': 1, 'low': 2, 'high': 3, 'critical': 4}
         min_level = levels.get(config.ALERT_MIN_SEVERITY, 2)
         return levels.get(severity, 0) >= min_level
-
     def send_alert(self, title: str, message: str, severity: str = 'low', data: Dict = None):
         if not config.ALERT_ENABLED:
             return
