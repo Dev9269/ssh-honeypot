@@ -110,7 +110,6 @@ def load_yaml_config(config_path: Optional[str] = None) -> bool:
     g['SHELL_HOSTNAME'] = shell.get('hostname', SHELL_HOSTNAME)
     g['SHELL_PROMPT'] = shell.get('prompt', SHELL_PROMPT)
     g['SHELL_BANNER'] = shell.get('banner', SHELL_BANNER)
-
     sftp_cfg = cfg.get('sftp', {})
     g['SFTP_ENABLED'] = sftp_cfg.get('enabled', SFTP_ENABLED)
     g['SFTP_ROOT'] = sftp_cfg.get('root', SFTP_ROOT)
