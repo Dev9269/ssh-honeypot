@@ -113,7 +113,6 @@ def load_yaml_config(config_path: Optional[str] = None) -> bool:
     sftp_cfg = cfg.get('sftp', {})
     g['SFTP_ENABLED'] = sftp_cfg.get('enabled', SFTP_ENABLED)
     g['SFTP_ROOT'] = sftp_cfg.get('root', SFTP_ROOT)
-
     geo = cfg.get('geo', {})
     g['GEO_ENABLED'] = geo.get('enabled', GEO_ENABLED)
     g['GEO_DB_PATH'] = geo.get('db_path', GEO_DB_PATH)
