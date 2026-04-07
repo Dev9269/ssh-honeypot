@@ -116,7 +116,6 @@ def load_yaml_config(config_path: Optional[str] = None) -> bool:
     geo = cfg.get('geo', {})
     g['GEO_ENABLED'] = geo.get('enabled', GEO_ENABLED)
     g['GEO_DB_PATH'] = geo.get('db_path', GEO_DB_PATH)
-
     intel = cfg.get('threat_intel', {})
     g['INTEL_ENABLED'] = intel.get('enabled', INTEL_ENABLED)
     g['INTEL_ABUSEIPDB_KEY'] = intel.get('abuseipdb_key', INTEL_ABUSEIPDB_KEY)
