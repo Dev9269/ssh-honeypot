@@ -155,7 +155,6 @@ def handle_command(cmd: str, ip: str, username: str, cwd: str = '/root') -> str:
         return 'logout\r\n'
     if cmd_norm in ('', '\n'):
         return ''
-
     if cmd_norm.startswith('echo '):
         return cmd_norm[5:] + '\r\n'
 
