@@ -120,7 +120,6 @@ def load_yaml_config(config_path: Optional[str] = None) -> bool:
     g['INTEL_ENABLED'] = intel.get('enabled', INTEL_ENABLED)
     g['INTEL_ABUSEIPDB_KEY'] = intel.get('abuseipdb_key', INTEL_ABUSEIPDB_KEY)
     g['INTEL_OTX_KEY'] = intel.get('otx_key', INTEL_OTX_KEY)
-
     alert = cfg.get('alerts', {})
     g['ALERT_ENABLED'] = alert.get('enabled', ALERT_ENABLED)
     g['ALERT_WEBHOOK_URL'] = alert.get('webhook_url', ALERT_WEBHOOK_URL)
