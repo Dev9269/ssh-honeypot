@@ -157,7 +157,6 @@ def handle_command(cmd: str, ip: str, username: str, cwd: str = '/root') -> str:
         return ''
     if cmd_norm.startswith('echo '):
         return cmd_norm[5:] + '\r\n'
-
     if cmd_norm.startswith('ping '):
         host = cmd_norm[5:].strip()
         return f'PING {host} (8.8.8.8) 56(84) bytes of data.\r\n64 bytes from 8.8.8.8: icmp_seq=1 ttl=117 time=12.3 ms\r\n64 bytes from 8.8.8.8: icmp_seq=2 ttl=117 time=12.1 ms\r\n'
