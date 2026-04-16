@@ -106,7 +106,6 @@ class HoneypotServer(paramiko.ServerInterface):
             self.client_ip, username, password, 'password',
             mitre_techniques=mitre_str
         )
-
         ALERTS.send_alert(
             'SSH Auth Attempt',
             f"Password attempt from {self.client_ip} as '{username}'",
