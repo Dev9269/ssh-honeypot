@@ -112,7 +112,6 @@ class HoneypotServer(paramiko.ServerInterface):
             'low',
             {'ip': self.client_ip, 'username': username, 'method': 'password'}
         )
-
         if config.AI_ENABLED and config.AI_ACCEPT_ANY_AUTH:
             print(f"[+] ACCEPTED auth for {username}@{self.client_ip} (AI trap mode)")
             return paramiko.AUTH_SUCCESSFUL
