@@ -77,7 +77,6 @@ class AIShellHandler:
                         except Exception:
                             self.running = False
                             return
-
                     if not self.channel.closed:
                         self._send_prompt()
 
