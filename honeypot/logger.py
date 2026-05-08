@@ -34,6 +34,7 @@ class HoneypotLogger:
         except (FileNotFoundError, json.JSONDecodeError):
             with open(self.json_log_file, 'w', encoding='utf-8') as f:
                 json.dump([], f, indent=4)
+
     def log_attempt(self, ip: str, username: str, password: str, method: str = 'password',
                     timestamp: str = None, mitre: str = ''):
         if timestamp is None:
