@@ -35,7 +35,6 @@ class TestConfig:
         assert config.MITRE_ENABLED == True
         assert config.RATE_LIMIT_MAX_CONNECTIONS == 10
         assert config.RATE_LIMIT_WINDOW == 60
-
     def test_yaml_loading(self):
         from honeypot import config
         yaml_path = os.path.join(os.path.dirname(__file__), '..', 'honeypot.yaml')
