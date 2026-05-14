@@ -43,7 +43,6 @@ class TestConfig:
         assert result == True
         assert config.PORT == 2222
         assert config.SHELL_ENABLED == True
-
     def test_yaml_not_found(self):
         from honeypot import config
         result = config.load_yaml_config('/nonexistent/config.yaml')
