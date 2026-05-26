@@ -164,7 +164,6 @@ def handle_command(cmd: str, ip: str, username: str, cwd: str = '/root') -> str:
         return '--2026-06-24 10:30:22--  Resolving host... connected.\r\nHTTP request sent, awaiting response... 200 OK\r\nLength: 1234 (1.2K)\r\nSaving to: \'index.html\'\r\n100%[=======================>] 1,234  --.-K/s   in 0s\r\n\r\nindex.html saved [1234/1234]\r\n'
     if cmd_norm in ('clear', 'reset'):
         return '\033[2J\033[H'
-
     if cmd_norm.startswith('rm '):
         return ''
 
