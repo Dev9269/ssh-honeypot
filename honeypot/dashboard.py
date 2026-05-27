@@ -140,6 +140,7 @@ class DashboardServer:
         async def dashboard(request: Request):
             return HTMLResponse(_HTML_TEMPLATE)
         return app
+
     def _check_auth(self, auth: str) -> bool:
         import base64
         if not auth.startswith("Basic "):
