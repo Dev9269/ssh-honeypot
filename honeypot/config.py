@@ -132,7 +132,6 @@ def load_yaml_config(config_path: Optional[str] = None) -> bool:
     g['ALERT_EMAIL_TO'] = alert.get('email_to', ALERT_EMAIL_TO)
     g['ALERT_EMAIL_FROM'] = alert.get('email_from', ALERT_EMAIL_FROM)
     g['ALERT_MIN_SEVERITY'] = alert.get('min_severity', ALERT_MIN_SEVERITY)
-
     db = cfg.get('database', {})
     g['DB_ENABLED'] = db.get('enabled', DB_ENABLED)
     g['DB_PATH'] = db.get('path', DB_PATH)
