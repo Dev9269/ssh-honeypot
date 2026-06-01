@@ -14,6 +14,7 @@ class HoneypotSFTPServer(paramiko.SFTPServerInterface):
         self.root = config.SFTP_ROOT
         os.makedirs(self.root, exist_ok=True)
         super().__init__(*args, **kwargs)
+
     def _realpath(self, path):
         path = os.path.normpath(path).lstrip('/')
         return os.path.join(self.root, path)
