@@ -26,7 +26,6 @@ class ThreatIntel:
         except Exception:
             pass
         return 0
-
     def check_otx(self, ip: str) -> Dict[str, Any]:
         if not config.INTEL_ENABLED or not config.INTEL_OTX_KEY:
             return {}
