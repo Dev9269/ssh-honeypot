@@ -135,7 +135,6 @@ def load_yaml_config(config_path: Optional[str] = None) -> bool:
     db = cfg.get('database', {})
     g['DB_ENABLED'] = db.get('enabled', DB_ENABLED)
     g['DB_PATH'] = db.get('path', DB_PATH)
-
     dash = cfg.get('dashboard', {})
     g['DASHBOARD_ENABLED'] = dash.get('enabled', DASHBOARD_ENABLED)
     g['DASHBOARD_HOST'] = dash.get('host', DASHBOARD_HOST)
