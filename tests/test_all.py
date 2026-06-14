@@ -25,6 +25,7 @@ def setup_test_env():
 
 
 class TestConfig:
+
     def test_default_values(self):
         from honeypot import config
         assert config.PORT == 2222
