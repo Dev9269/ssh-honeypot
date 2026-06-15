@@ -24,7 +24,6 @@ class AIShellHandler:
         session.username = self.username
         self.channel.send(config.SHELL_BANNER)
         self._interact()
-
     def _interact(self):
         while self.running and not self.channel.closed:
             try:
