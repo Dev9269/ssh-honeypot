@@ -79,7 +79,6 @@ class AIShellHandler:
                             return
                     if not self.channel.closed:
                         self._send_prompt()
-
             except (socket.timeout, OSError):
                 continue
             except EOFError:
