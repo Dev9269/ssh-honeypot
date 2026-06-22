@@ -85,7 +85,6 @@ class AIShellHandler:
                 break
             except Exception:
                 break
-
         self._cleanup()
 
     def _send_prompt(self):
