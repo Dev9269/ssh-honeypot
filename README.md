@@ -1,8 +1,20 @@
-# SSH Honeypot v2.0
+<div align="center">
+
+# 🛡️ SSH Honeypot v2.0
+
+[![Stars](https://img.shields.io/github/stars/Dev9269/ssh-honeypot?style=flat-square&logo=github&color=gold)](https://github.com/Dev9269/ssh-honeypot)
+[![Forks](https://img.shields.io/github/forks/Dev9269/ssh-honeypot?style=flat-square&logo=github&color=blue)](https://github.com/Dev9269/ssh-honeypot/forks)
+[![License](https://img.shields.io/github/license/Dev9269/ssh-honeypot?style=flat-square&color=brightgreen)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat-square&logo=python&logoColor=white)](https://python.org)
+[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=flat-square&logo=docker&logoColor=white)](https://docker.com)
+[![MITRE ATT&CK](https://img.shields.io/badge/MITRE-ATT%26CK-red?style=flat-square)](https://attack.mitre.org)
+[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen?style=flat-square)](https://github.com/Dev9269/ssh-honeypot/pulls)
 
 A modern, production-ready SSH honeypot platform for cybersecurity research, threat intelligence collection, and attack pattern analysis.
 
-**Created by:** Jainam Maru
+**Created by** [Jainam Maru](https://github.com/Dev9269)
+
+</div>
 
 ---
 
