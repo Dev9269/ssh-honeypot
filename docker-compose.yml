@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  honeypot:
+    build: .
+    container_name: ssh-honeypot
+    ports:
+      - "2222:2222"
+      - "8080:8080"
+    volumes:
+      - ./logs:/app/logs
+      - ./data:/app/data
+      - ./sftp_root:/app/sftp_root
+      - ./honeypot.yaml:/app/honeypot.yaml
+    environment:
+      - TZ=UTC
+    restart: unless-stopped
+    cap_add:
+      - NET_ADMIN
+    networks:
+      - honeypot-net
+
+networks:
+  honeypot-net:
+    driver: bridge

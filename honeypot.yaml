@@ -1,0 +1,89 @@
+server:
+  host: 0.0.0.0
+  port: 2222
+
+auth:
+  delay: 2
+
+ip_filter:
+  whitelist: []
+  blacklist: []
+
+rate_limit:
+  max_connections: 10
+  window: 60
+  ban_duration: 300
+
+shell:
+  enabled: true
+  hostname: ubuntu-server
+  prompt: "$ "
+  banner: "Linux ubuntu-server 5.15.0-91-generic #101-Ubuntu SMP Tue Nov 14 13:30:08 UTC 2025 x86_64 GNU/Linux\r\n"
+
+sftp:
+  enabled: true
+  root: ./sftp_root
+
+geo:
+  enabled: true
+  db_path: ./data/GeoLite2-City.mmdb
+
+threat_intel:
+  enabled: false
+  abuseipdb_key: ""
+  otx_key: ""
+
+alerts:
+  enabled: false
+  webhook_url: ""
+  slack_webhook: ""
+  discord_webhook: ""
+  email_smtp: ""
+  email_port: 587
+  email_user: ""
+  email_pass: ""
+  email_to: ""
+  email_from: "honeypot@localhost"
+  min_severity: medium
+
+database:
+  enabled: true
+  path: ./logs/honeypot.db
+
+dashboard:
+  enabled: false
+  host: 127.0.0.1
+  port: 8080
+  user: admin
+  password: admin
+
+metrics:
+  enabled: false
+  port: 9090
+
+log_rotation:
+  enabled: true
+  max_size_mb: 50
+  backup_count: 5
+
+mitre:
+  enabled: true
+
+ai:
+  enabled: false
+  mode: ollama
+  ollama_endpoint: "http://127.0.0.1:11434"
+  model: "llama3.1:8b"
+  timeout: 10
+  stream: true
+  max_history: 5
+  accept_any_auth: true
+  fallback_to_static: true
+  system_prompt: "You are a real, vulnerable Linux terminal..."
+
+fingerprint_banners:
+  enabled: true
+  banners:
+    - "SSH-2.0-OpenSSH_7.9p1 Debian-10"
+    - "SSH-2.0-OpenSSH_8.4p1 Ubuntu-6ubuntu2"
+    - "SSH-2.0-OpenSSH_8.9p1 Ubuntu-3"
