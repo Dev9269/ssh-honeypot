@@ -1,0 +1,6 @@
+
+# Rate limit bypass detection
+rate_limit_bypass:
+  enabled: true
+  threshold: 10
+  window: 60
