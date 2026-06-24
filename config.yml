@@ -4,3 +4,22 @@ rate_limit_bypass:
   enabled: true
   threshold: 10
   window: 60
+
+# Database configuration
+database:
+  enabled: true
+  path: ./logs/honeypot.db
+  backup_interval_hours: 24
+
+# Shell configuration
+shell:
+  enabled: true
+  hostname: ubuntu-server
+  prompt: "$ "
+  banner: "Linux ubuntu-server 5.15.0-91-generic #101-Ubuntu SMP Tue Nov 14 13:30:08 UTC 2025 x86_64 GNU/Linux\r\n"
+
+# Log rotation
+log_rotation:
+  enabled: true
+  max_size_mb: 50
+  backup_count: 5
