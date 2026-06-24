@@ -10,3 +10,6 @@ venv/
 dist/
 build/
 .env
+
+gen_final.py
+gen_real.py
