@@ -9,6 +9,9 @@
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=flat-square&logo=docker&logoColor=white)](https://docker.com)
 [![MITRE ATT&CK](https://img.shields.io/badge/MITRE-ATT%26CK-red?style=flat-square)](https://attack.mitre.org)
 [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen?style=flat-square)](https://github.com/Dev9269/ssh-honeypot/pulls)
+[![CI](https://github.com/Dev9269/ssh-honeypot/actions/workflows/ci.yml/badge.svg)](https://github.com/Dev9269/ssh-honeypot/actions/workflows/ci.yml)
+[![Sponsor](https://img.shields.io/badge/Sponsor-Dev9269-ea4aaa?style=flat-square&logo=githubsponsors)](https://github.com/sponsors/Dev9269)
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-FFDD00?style=flat-square&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/jainammaru)
 
 A modern, production-ready SSH honeypot platform for cybersecurity research, threat intelligence collection, and attack pattern analysis.
 
