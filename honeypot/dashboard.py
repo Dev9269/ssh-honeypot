@@ -6,6 +6,8 @@ try:
     import asyncio
     import threading
     from pathlib import Path
+    from typing import Optional
+
     _FASTAPI_AVAILABLE = True
 except ImportError:
     _FASTAPI_AVAILABLE = False
@@ -123,26 +125,32 @@ _HTML_TEMPLATE = """<!DOCTYPE html>
 
 
 class DashboardServer:
-
     def __init__(self):
         self._thread: Optional[threading.Thread] = None
         self._app = None
 
     def _create_app(self):
         app = FastAPI(title="SSH Honeypot Dashboard")
+
         @app.get("/api/stats")
         async def get_stats(request: Request):
             auth = request.headers.get("Authorization", "")
             if not self._check_auth(auth):
-                raise HTTPException(status_code=401, headers={"WWW-Authenticate": 'Basic realm="Honeypot Dashboard"'})
+                raise HTTPException(
+                    status_code=401,
+                    headers={"WWW-Authenticate": 'Basic realm="Honeypot Dashboard"'},
+                )
             return db.get_stats()
+
         @app.get("/")
         async def dashboard(request: Request):
             return HTMLResponse(_HTML_TEMPLATE)
+
         return app
 
     def _check_auth(self, auth: str) -> bool:
         import base64
+
         if not auth.startswith("Basic "):
             return False
         try:
@@ -161,13 +169,20 @@ class DashboardServer:
         def run():
             try:
                 app = self._create_app()
-                uvicorn.run(app, host=config.DASHBOARD_HOST, port=config.DASHBOARD_PORT, log_level="warning")
+                uvicorn.run(
+                    app,
+                    host=config.DASHBOARD_HOST,
+                    port=config.DASHBOARD_PORT,
+                    log_level="warning",
+                )
             except Exception as e:
                 print(f"[!] Dashboard error: {e}")
 
         self._thread = threading.Thread(target=run, daemon=True)
         self._thread.start()
-        print(f"[*] Dashboard started at http://{config.DASHBOARD_HOST}:{config.DASHBOARD_PORT}")
+        print(
+            f"[*] Dashboard started at http://{config.DASHBOARD_HOST}:{config.DASHBOARD_PORT}"
+        )
 
     def stop(self):
         pass
