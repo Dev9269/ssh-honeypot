@@ -117,6 +117,9 @@ FAKE_FILESYSTEM = {
         },
     },
 }
+# NOTE: CURRENT_DIR is a module-level constant shared across all connections.
+# For multi-tenant deployments this should be made per-session (e.g. stored
+# in the connection handler and passed through handle_command's cwd parameter).
 CURRENT_DIR = "/root"
 
 

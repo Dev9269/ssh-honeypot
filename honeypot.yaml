@@ -24,6 +24,7 @@ geo:
 threat_intel:
   enabled: false
   abuseipdb_key: ""
+  virustotal_key: ""
   otx_key: ""
 alerts:
   enabled: false
