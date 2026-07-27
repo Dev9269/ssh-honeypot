@@ -132,6 +132,17 @@ class DashboardServer:
     def _create_app(self):
         app = FastAPI(title="SSH Honeypot Dashboard")
 
+        @app.middleware("http")
+        async def add_security_headers(request: Request, call_next):
+            response = await call_next(request)
+            response.headers["X-Content-Type-Options"] = "nosniff"
+            response.headers["X-Frame-Options"] = "DENY"
+            response.headers["Content-Security-Policy"] = (
+                "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'"
+            )
+            response.headers["X-XSS-Protection"] = "1; mode=block"
+            return response
+
         @app.get("/api/stats")
         async def get_stats(request: Request):
             auth = request.headers.get("Authorization", "")
