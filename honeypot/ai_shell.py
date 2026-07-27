@@ -59,6 +59,33 @@ class AIShellHandler:
                         self.channel.send('\033[2J\033[H')
                         self._send_prompt()
                         continue
+                    if cmd_lower == 'cd' or cmd_lower.startswith('cd '):
+                        session = self.engine.get_or_create_session(self.session_id)
+                        parts = line.strip().split(maxsplit=1)
+                        if len(parts) == 1 or parts[1] in ('~', ''):
+                            target = '/root'
+                        elif parts[1] == '-':
+                            target = getattr(session, '_prev_cwd', '/root')
+                        else:
+                            target = parts[1]
+                        session._prev_cwd = session.cwd
+                        if target.startswith('/'):
+                            new_cwd = target
+                        else:
+                            new_cwd = (session.cwd.rstrip('/') + '/' + target)
+                        new_cwd = AIShellHandler._resolve_path(new_cwd)
+                        if not AIShellHandler._validate_path(new_cwd):
+                            self.channel.send(f'bash: cd: {target}: No such directory\r\n')
+                        else:
+                            session.cwd = new_cwd
+                        self._send_prompt()
+                        HONEYPOT_LOGGER.log_session_activity(
+                            self.client_ip,
+                            f"AI cd: {line[:200]}",
+                            username=self.username
+                        )
+                        continue
+
                     mitre_techniques = MITRE.analyze_command(line)
                     mitre_str = MITRE.format_techniques(mitre_techniques)
                     db.insert_command(
@@ -99,6 +126,25 @@ class AIShellHandler:
 
     def _cleanup(self):
         self.engine.cleanup_session(self.session_id)
+
+    @staticmethod
+    def _resolve_path(path: str) -> str:
+        parts = path.split('/')
+        resolved = []
+        for p in parts:
+            if p in ('', '.'):
+                continue
+            if p == '..':
+                if resolved:
+                    resolved.pop()
+            else:
+                resolved.append(p)
+        return '/' + '/'.join(resolved) if resolved else '/'
+
+    @staticmethod
+    def _validate_path(path: str) -> bool:
+        allowed = ('/', '/root', '/home', '/tmp', '/var', '/etc', '/usr', '/bin', '/opt', '/mnt')
+        return any(path == a or path.startswith(a + '/') for a in allowed)
 
 
 class AuthAcceptHandler:
