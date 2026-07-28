@@ -21,6 +21,22 @@ A modern, production-ready SSH honeypot platform for cybersecurity research, thr
 
 ---
 
+## Table of Contents
+
+- [What's New in v2.0](#whats-new-in-v20)
+- [Features](#features)
+- [Quick Start](#quick-start)
+- [Command Line Options](#command-line-options)
+- [Docker Deployment](#docker-deployment)
+- [Configuration](#configuration-yaml)
+- [Log Files](#log-files)
+- [MITRE ATT&CK Coverage](#mitre-attck-coverage)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [License](#license)
+
+---
+
 ## What's New in v2.0
 
 - **Fake Shell Interaction** — Captures attacker commands in a realistic Linux shell environment
@@ -245,6 +261,10 @@ sqlite3 logs/honeypot.db "SELECT ip, username, password FROM auth_attempts ORDER
 | Privilege Escalation | T1068 | sudo/chown commands |
 | Defense Evasion | T1562 | rm -rf, shutdown, etc. |
 | Data Collection | T1005 | tar, zip, find commands |
+
+## Contributing
+
+Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## Security Notice
 
