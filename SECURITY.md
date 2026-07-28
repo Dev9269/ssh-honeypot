@@ -2,18 +2,23 @@
 
 ## Reporting a Vulnerability
 
-If you discover a security vulnerability in SSH Honeypot, please report it privately by emailing **security@example.com** (replace with the actual maintainer email).
+If you discover a security vulnerability in SSH Honeypot, please report it privately.
 
-**Do not** open a public GitHub issue for security vulnerabilities.
+**Do not** open a public GitHub issue. Instead, send a detailed report to:
 
-### What to Include
-- A description of the vulnerability.
-- Steps to reproduce the issue.
-- Affected versions.
-- Any potential impact or exploit scenario.
+- **Email**: jainam.maru@example.com
+- **Alternative**: Use the [GitHub Security Advisory](https://github.com/Dev9269/ssh-honeypot/security/advisories/new) tab.
 
-### Response Timeline
-- **Acknowledgment** within 48 hours of reporting.
+Include the following in your report:
+
+- Type of vulnerability
+- Steps to reproduce
+- Affected version(s)
+- Any potential impact
+
+## Response Timeline
+
+- **Acknowledgment** within 48 hours.
 - **Initial assessment** within 5 business days.
 - **Fix timeline** communicated based on severity.
 
@@ -23,3 +28,7 @@ If you discover a security vulnerability in SSH Honeypot, please report it priva
 |---------|-----------|
 | 2.x     | ✅        |
 | < 2.0   | ❌        |
+
+## Scope
+
+This policy covers the SSH honeypot source code, configuration, and deployment scripts. Dependencies (Paramiko, FastAPI, etc.) should be reported to their respective maintainers.
