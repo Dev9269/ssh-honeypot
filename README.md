@@ -10,12 +10,12 @@
 [![MITRE ATT&CK](https://img.shields.io/badge/MITRE-ATT%26CK-red?style=flat-square)](https://attack.mitre.org)
 [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen?style=flat-square)](https://github.com/Dev9269/ssh-honeypot/pulls)
 [![CI](https://github.com/Dev9269/ssh-honeypot/actions/workflows/ci.yml/badge.svg)](https://github.com/Dev9269/ssh-honeypot/actions/workflows/ci.yml)
-[![Last Commit](https://img.shields.io/github/last-commit/Dev9269/ssh-honeypot?style=flat-square&color=blueviolet)](https://github.com/Dev9269/ssh-honeypot/commits/master)
-[![Issues](https://img.shields.io/github/issues/Dev9269/ssh-honeypot?style=flat-square&color=red)](https://github.com/Dev9269/ssh-honeypot/issues)
 [![Sponsor](https://img.shields.io/badge/Sponsor-Dev9269-ea4aaa?style=flat-square&logo=githubsponsors)](https://github.com/sponsors/Dev9269)
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-FFDD00?style=flat-square&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/jainammaru)
 
-A modern, production-ready SSH honeypot platform for cybersecurity research, threat intelligence collection, and attack pattern analysis.
+**Deception-based threat intelligence collection for cybersecurity researchers, SOC teams, and AI/ML enthusiasts.**
+
+Capture real attacker behavior → enrich with threat intel feeds → map to MITRE ATT&CK → analyze, alert, and learn.
 
 **Created by** [Jainam Maru](https://github.com/Dev9269)
 
@@ -23,23 +23,80 @@ A modern, production-ready SSH honeypot platform for cybersecurity research, thr
 
 ---
 
-## Table of Contents
+## 🔭 Overview: Why a Honeypot?
 
-- [What's New in v2.0](#whats-new-in-v20)
-- [Features](#features)
-- [Quick Start](#quick-start)
-- [Command Line Options](#command-line-options)
-- [Docker Deployment](#docker-deployment)
-- [Configuration](#configuration-yaml)
-- [Log Files](#log-files)
-- [MITRE ATT&CK Coverage](#mitre-attck-coverage)
-- [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [License](#license)
+Real-world attack data is the single best training set for detection engineering, yet most defenders never see it. An SSH honeypot sits on the front lines and turns every credential-stuffing bot and manual intruder into **structured intelligence**:
 
----
+- 📡 **Collect** — raw auth attempts, executed commands, and SFTP activity from real attackers
+- 🌍 **Enrich** — geolocation (GeoIP2 / ip-api.com), threat scoring (AbuseIPDB, AlienVault OTX, VirusTotal)
+- 🧠 **Map** — automatic classification to MITRE ATT&CK techniques (T1110, T1059, T1098…)
+- 💾 **Store** — human-readable logs, structured JSON, and a queryable SQLite database
+- 🔔 **Act** — webhook / Slack / Discord / email alerts with per-severity thresholds
 
-## What's New in v2.0
+This project is the data-collection layer of a full threat-intelligence pipeline — pair it with [dark-sentinel](https://github.com/Dev9269/dark-sentinel) for dark-web coverage or feed the JSON output into your own detection stack.
+
+## 🏗️ Architecture
+
+```mermaid
+flowchart LR
+    A[Attacker Bot / Manual Intruder] -->|TCP :2222| B
+
+    subgraph HP[SSH Honeypot]
+        B[Paramiko SSH Server<br/>Dynamic Banner Spoofing] --> C[Auth Attempt Capture<br/>username · password · key fp]
+        C --> D[Fake Shell / SFTP<br/>command & file activity]
+        C --> E[Rate Limiter +<br/>Auto-Ban]
+    end
+
+    D --> F[Log Parser & Enricher]
+    E --> F
+    F -->|GeoIP2 / ip-api| G[IP Geolocation<br/>city · country · ASN]
+    F -->|AbuseIPDB · OTX · VT| H[Threat Scoring<br/>0-10 severity]
+    F --> I[MITRE ATT&CK Mapper<br/>T1110 · T1059 · T1098 · ...]
+    I --> J[(SQLite DB)]
+    I --> K[attacks.json / attacks.log]
+    J --> L[Web Dashboard<br/>FastAPI · live stats]
+    K --> L
+    L --> M[Alerting<br/>Webhook · Slack · Discord · Email]
+```
+
+**Data flow:** every keystroke an attacker types lands in `attacks.json` with an ATT&CK technique ID, a geolocation, and a severity score — ready for SIEM ingestion or ML analysis.
+
+## 🚀 Quick Start
+
+### Option A — One-line installer (coming soon)
+
+```bash
+curl -sSL https://raw.githubusercontent.com/Dev9269/ssh-honeypot/main/install.sh | bash
+```
+
+### Option B — Manual
+
+```bash
+git clone https://github.com/Dev9269/ssh-honeypot.git
+cd ssh-honeypot
+pip install -r requirements.txt
+
+# Basic honeypot on :2222
+python main.py
+
+# With live dashboard on :8080
+python main.py --dashboard
+
+# With YAML config
+python main.py --config honeypot.yaml
+```
+
+### Docker Deployment
+
+```bash
+docker-compose up --build
+
+# Or manually
+docker build -t ssh-honeypot .
+docker run -d -p 2222:2222 -p 8080:8080 ssh-honeypot
+```
+
+## 🆕 What's New in v2.0
 
 - **Fake Shell Interaction** — Captures attacker commands in a realistic Linux shell environment
 - **IP Geolocation** — Maps attacker IPs to city/country/ASN (GeoIP2 or ip-api.com fallback)
@@ -56,7 +113,7 @@ A modern, production-ready SSH honeypot platform for cybersecurity research, thr
 - **SFTP Simulation** — Fake file transfer environment
 - **Prometheus Metrics** — /metrics endpoint for monitoring
 
-## Features
+## ✨ Features
 
 | Feature | Description |
 |---------|-------------|
@@ -74,54 +131,7 @@ A modern, production-ready SSH honeypot platform for cybersecurity research, thr
 | Docker | Containerized via Dockerfile + docker-compose |
 | macOS .app | Native macOS application support |
 
-## Quick Start
-
-### Installation
-
-```bash
-git clone https://github.com/Dev9269/ssh-honeypot.git
-cd ssh-honeypot
-pip install -r requirements.txt
-```
-
-### Basic Usage
-
-```bash
-python main.py
-```
-
-### With Dashboard
-
-```bash
-python main.py --dashboard
-# Open http://127.0.0.1:8080 (user: admin, pass: admin)
-```
-
-### With YAML Config
-
-```bash
-python main.py --config honeypot.yaml
-```
-
-## Command Line Options
-
-```
-python main.py --help
-
-Options:
-  --host HOST           Host interface (default: 0.0.0.0)
-  --port PORT           Port (default: 2222)
-  --config CONFIG       Path to YAML config file
-  --dashboard           Enable web dashboard
-  --no-shell            Disable fake shell
-  --no-geo              Disable geolocation
-  --no-db               Disable database logging
-  --blacklist BLACKLIST Comma separated IPs/CIDRs to block
-  --whitelist WHITELIST Comma separated IPs/CIDRs to allow
-  --version             Show version
-```
-
-## Console Output
+## 🖥️ Console Output
 
 ```
 [*] SSH Honeypot v2.0.0 listening on 0.0.0.0:2222
@@ -140,7 +150,7 @@ Options:
 [-] Connection closed from 192.168.1.100 (duration: 12.5s)
 ```
 
-## Fake Shell Example
+## 🐚 Fake Shell Example
 
 When an attacker connects (the honeypot rejects auth but still serves a shell):
 
@@ -161,18 +171,7 @@ logout
 
 All commands are logged to `attacks.log`, `attacks.json`, and the SQLite database with MITRE ATT&CK classifications.
 
-## Docker Deployment
-
-```bash
-# Build and run
-docker-compose up --build
-
-# Or build manually
-docker build -t ssh-honeypot .
-docker run -d -p 2222:2222 -p 8080:8080 ssh-honeypot
-```
-
-## Project Structure
+## 📁 Project Structure
 
 ```
 ssh-honeypot/
@@ -199,7 +198,7 @@ ssh-honeypot/
 └── README.md
 ```
 
-## Configuration (YAML)
+## ⚙️ Configuration (YAML)
 
 All settings can be configured via `honeypot.yaml`:
 
@@ -222,7 +221,7 @@ alerts:
 
 See the full `honeypot.yaml` file for all options.
 
-## Log Files
+## 📊 Log Files
 
 ### attacks.log (Human-readable)
 ```
@@ -230,7 +229,7 @@ See the full `honeypot.yaml` file for all options.
 2026-06-24 14:30:45,678 - Activity | IP: 10.0.0.5 | command: whoami
 ```
 
-### attacks.json (Structured)
+### attacks.json (Structured — SIEM/ML ready)
 ```json
 [
   {
@@ -251,7 +250,7 @@ Query attack data directly:
 sqlite3 logs/honeypot.db "SELECT ip, username, password FROM auth_attempts ORDER BY timestamp DESC LIMIT 10;"
 ```
 
-## MITRE ATT&CK Coverage
+## 🎯 MITRE ATT&CK Coverage
 
 | Technique | ID | Detected By |
 |-----------|----|-------------|
@@ -264,11 +263,11 @@ sqlite3 logs/honeypot.db "SELECT ip, username, password FROM auth_attempts ORDER
 | Defense Evasion | T1562 | rm -rf, shutdown, etc. |
 | Data Collection | T1005 | tar, zip, find commands |
 
-## Contributing
+## 🏷️ Topics & Tags
 
-Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+`honeypot` · `ssh` · `cybersecurity` · `threat-intelligence` · `deception` · `security-tools` · `mitre-attack` · `honeypot-ssh` · `intrusion-detection` · `network-security`
 
-## Security Notice
+## 🔒 Security Notice
 
 **This tool is for authorized security research and education only.**
 
@@ -276,11 +275,11 @@ Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines
 - Comply with all applicable laws
 - The author assumes no liability for misuse
 
-## License
+## 📄 License
 
 MIT License — see [LICENSE](LICENSE)
 
-## Acknowledgments
+## 🙏 Acknowledgments
 
 - [Paramiko](https://www.paramiko.org/) — SSH protocol library
 - [MaxMind GeoIP2](https://www.maxmind.com/) — Geolocation data
