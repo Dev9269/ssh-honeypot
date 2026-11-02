@@ -35,7 +35,7 @@ Real-world attack data is the single best training set for detection engineering
 - 💾 **Store** — human-readable logs, structured JSON, and a queryable SQLite database
 - 🔔 **Act** — webhook / Slack / Discord / email alerts with per-severity thresholds
 
-This project is the data-collection layer of a full threat-intelligence pipeline — pair it with [dark-sentinel](https://github.com/Dev9269/dark-sentinel) for dark-web coverage or feed the JSON output into your own detection stack.
+This project is the data-collection layer of a full threat-intelligence pipeline — pair it with [darkforce](https://github.com/Dev9269/darkforce) for dark-web coverage or feed the JSON output into your own detection stack.
 
 ## 🏗️ Architecture
 
